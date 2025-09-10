@@ -9,3 +9,20 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+body{
+background-color: rgb(226, 226, 226);
+height: 100vh;
+}
+
+.libreta{
+    background-color: rgb(255, 246, 236);
+    height: 60vh;
+}
+
+.input{
+
+}
+
+.tareas{
+
+}
