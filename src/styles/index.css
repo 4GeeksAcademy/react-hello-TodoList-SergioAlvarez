@@ -9,20 +9,78 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
-body{
-background-color: rgb(226, 226, 226);
-height: 100vh;
+
+*{
+    
+font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+  color: whitesmoke;
+
 }
 
-.libreta{
-    background-color: rgb(255, 246, 236);
-    height: 60vh;
+body{
+background-color: rgb(38, 107, 62);
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.toDoList{
+    background-color: transparent;
+    height: 80vh;
+    width: 80vh;
+
+}
+
+
+
+.boton{
+    background-color: transparent;
+    border: transparent ;
+    border-bottom: 1px black solid;
+    color: transparent;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.boton:hover{
+    background-color: transparent;
+    border: transparent ;
+    border-bottom: 1px black solid;
+    color: black;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .input{
+    display: flex;
+    border: transparent;
+    border-bottom: 1px black solid;
+    background-color: transparent;
+    border-radius: 0px;
+}
+.input:enabled{
+    background-color: transparent;
+
 
 }
 
-.tareas{
-
+.textoDeTarea{
+    color: white
 }
+
+.footer{
+    border-top: 1px black solid;
+    padding: 1vh;
+}
+

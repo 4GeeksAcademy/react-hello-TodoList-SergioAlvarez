@@ -32,57 +32,63 @@ const Home = () => {
     );
   };
 
-
   return (
     <>
-    
-      <div className=" d-flex flex-column align-items-center justify-content-center">
-
-          <form onSubmit={handleSubmit} className="d-flex flex-column justify-content-center align-items-center">
-            <label htmlFor="form" className="form-label">
-              To do List
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="form"
-              value={tarea}
-              placeholder="Hacer la cama"
-              onChange={recogerTarea}
-            ></input>
-          </form>
-          <div className="tareas">
-            <ul>
-              {todos.map((todos, index) => {
-                return (
-                  <div className="listadoTareas">
-                  <li key={index} className="d-flex justify-content-between align-items-center">
-                    {todos}
-                    <button
-                      onClick={() => {
-                        remove(index);
-                        console.log(todos);
-                      }}
-                    className="boton">
-                      <i className="fa-solid fa-xmark"></i>
-                    </button>
-                  </li>
-                  </div>
-                );
-
-              })}
-            </ul>
-          </div>
-          
-          <div>
-            {todos.length == 0 ? 
-          <p>No hay tareas por ahora</p>  
-          :
-          <p>{todos.length}</p>
-          }
-          </div>
+      <div className="toDoList d-flex flex-column w-auto">
+        <div className="text-center">
+          <label htmlFor="form" className="form-label">
+            <h1>To do List</h1>
+          </label>
         </div>
-        
+        <form
+          onSubmit={handleSubmit}
+          className="d-flex flex-column justify-content-center align-items-center"
+        >
+          <input
+            type="text"
+            className="form-control input ps-3"
+            id="form"
+            value={tarea}
+            placeholder="Hoy tengo que..."
+            onChange={recogerTarea}
+          ></input>
+        </form>
+        <ul className="p-0 m-0">
+          {todos.map((todos, index) => {
+            return (
+              <div className="row">
+                <ul>
+                  <li>
+                    <div className="col-12 ">
+                      <button
+                        key={index}
+                        onClick={() => {
+                          remove(index);
+                          console.log(todos);
+                        }}
+                        className="boton"
+                      >
+                        <p className="textoDeTarea ps-3 pt-2">{todos}</p>
+
+                        <i className="fa-solid fa-xmark m-2"></i>
+
+                      </button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            );
+          })}
+        </ul>
+      </div>
+
+      <div className="d-flex footer ">
+        {todos.length == 0 ? (
+          <p>No hay tareas por ahora</p>
+        ) : (
+          <p>{todos.length} Tareas pendientes.</p>
+        )}
+      </div>
     </>
   );
 };
